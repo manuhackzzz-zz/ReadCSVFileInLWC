@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+        <template if:true={showSpinner}>
+            <lightning-spinner variant="brand" size="medium" alternative-text="Parsing file(s)"></lightning-spinner>
+        </template>
+        <div>
+            <lightning-file-upload 
+                accept={acceptedCSVFormats} 
+                label="Attach receipt" 
+                multiple="true" 
+                onuploadfinished={uploadFileHandler} 
+                record-id={recordId}
+            ></lightning-file-upload>
+        </div>
+    </lightning-card>
+</template>
